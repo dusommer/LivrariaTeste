@@ -1,0 +1,47 @@
+﻿@model FIltroConsultaRequest
+@using TesteHBSIS.WebApp.Models.Args;
+
+@{
+    ViewBag.Title = "Conosulta de livro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card shadow mt-4">
+        <div class="card-header">
+            @using (Ajax.BeginForm("Filtrar", "Livros", new AjaxOptions() { UpdateTargetId = "consultaLivros", InsertionMode = InsertionMode.Replace, HttpMethod = "POST" }))
+            {
+                <div class="col-sm-3 my-1">
+                    <input type="submit" value="Filtrar" class="btn btn-primary btn-user btn-block" />
+                </div>
+                <div class="row mt-3">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col-md-6 my-1">
+                        @Html.DropDownListFor(model => model.IdAutor, new SelectList(ViewBag.Autores as List<AutorResponse>, "id", "nome"), "Todos autores", htmlAttributes: new { placeholder = "Autor", @class = "form-control", Title = "Autor" })
+                        @Html.ValidationMessageFor(model => model.IdAutor, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-6 my-1">
+                        @Html.DropDownListFor(model => model.IdGenero, new SelectList(ViewBag.Generos as List<GeneroResponse>, "id", "nome"), "Todos generos", htmlAttributes: new { placeholder = "Genero", @class = "form-control", Title = "Gênero" })
+                        @Html.ValidationMessageFor(model => model.IdGenero, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-12 my-1">
+                        @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { placeholder = "Titulo", @class = "form-control", Title = "Título" } })
+                        @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-6 my-1">
+                        @Html.EditorFor(model => model.PrecoDe, new { htmlAttributes = new { placeholder = "Preço de", @class = "form-control", Title = "Preço de" } })
+                        @Html.ValidationMessageFor(model => model.PrecoDe, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-6 my-1">
+                        @Html.EditorFor(model => model.PrecoAte, new { htmlAttributes = new { placeholder = "Preço até", @class = "form-control", Title = "Preço até" } })
+                        @Html.ValidationMessageFor(model => model.PrecoAte, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="card-body">
+            @Html.Partial("PartialLivros", ViewBag.Consulta as List<LivroResponse>)
+        </div>
+    </div>
+</div>
+

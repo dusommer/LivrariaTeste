@@ -1,0 +1,88 @@
+﻿@model LivroResponse
+
+@using TesteHBSIS.WebApp.Models.Args;
+
+@{
+    ViewBag.Title = "Deletar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class=" col-md-9 col-lg-7 col-xl-5">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h3 class="h4 text-gray-900 mb-4">Deseja deletar esse livro?</h3>
+                                </div>
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        Título
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Titulo)
+                                    </dd>
+
+                                    <dt>
+                                        Autor
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Autor)
+                                    </dd>
+
+                                    <dt>
+                                        Gênero
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Genero)
+                                    </dd>
+
+                                    <dt>
+                                        Edição
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Edicao)
+                                    </dd>
+
+                                    <dt>
+                                        Estoque
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Estoque)
+                                    </dd>
+
+                                    <dt>
+                                       Preço
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Preco)
+                                    </dd>
+
+                                </dl>
+
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <input type="submit" value="Deletar" class="btn btn-primary btn-user btn-block" />
+                                    @Html.ActionLink("Cancelar", "Consulta", null, new { @class = "btn btn-secondary btn-user btn-block" })
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

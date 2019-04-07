@@ -1,0 +1,67 @@
+﻿@model List<TesteHBSIS.WebApp.Models.Args.LivroResponse>
+
+<div id="consultaLivros">
+    @if (Model.Count > 0)
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Título
+                        </th>
+                        <th>
+                            Gênero
+                        </th>
+                        <th>
+                            Autor
+                        </th>
+                        <th>
+                            Ediçao
+                        </th>
+                        <th>
+                            Estoque
+                        </th>
+                        <th>
+                            Preço
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Genero)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Autor)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Edicao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estoque)
+                            </td>
+                            <td>
+                                R$@item.Preco
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edita", new { id = item.Id }) |
+                                @Html.ActionLink("Deletar", "Deleta", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <td>Não foi encontrado nenhum resultado. Aplique o filtro novamente</td>
+    }
+</div>
