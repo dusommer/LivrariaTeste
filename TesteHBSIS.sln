@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHBSIS.Api", "TesteHBSI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHBSIS.WebApp", "TesteHBSIS.WebApp\TesteHBSIS.WebApp.csproj", "{ABB4C238-F1D1-40B9-A6AB-860E1BE272C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedraPapelTesoura", "PedraPapelTesoura\PedraPapelTesoura.csproj", "{F5087E5C-D434-43B7-8B06-0BCA9BF3AADF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,12 +41,16 @@ Global
 		{ABB4C238-F1D1-40B9-A6AB-860E1BE272C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABB4C238-F1D1-40B9-A6AB-860E1BE272C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABB4C238-F1D1-40B9-A6AB-860E1BE272C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5087E5C-D434-43B7-8B06-0BCA9BF3AADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5087E5C-D434-43B7-8B06-0BCA9BF3AADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5087E5C-D434-43B7-8B06-0BCA9BF3AADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5087E5C-D434-43B7-8B06-0BCA9BF3AADF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
 		SolutionGuid = {4F766A6B-51A4-4E7E-9C73-C3D9891DC9D3}
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal
